@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Sep 10 11:44:51 2018
-
-@author: Yuanpei Cao
-"""
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -16,10 +11,7 @@ from sklearn.externals import joblib
 ## set up parameter
 ###############################################################################
 # file for saving processed dataset
-#df_train_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                 'processed_filtered_data/processed_train3.csv')
-    
-df_train_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+df_train_file = ('~/taxi_fare_prediction/all/'
                  'processed_filtered_data/processed_train1_geoid.csv')
 
 ###############################################################################
@@ -95,7 +87,7 @@ gc.collect()
 ## save result
 ###############################################################################
 # Save to file in the current working directory   
-pkl_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+pkl_filename = ('~/taxi_fare_prediction/'
                 'simple_model/lightgbm_train1_geo.pkl')
  
 joblib.dump(model, pkl_filename)
@@ -104,9 +96,7 @@ joblib.dump(model, pkl_filename)
 ## prediction
 ############################################################################### 
 # file for saving processed dataset
-#df_test_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                'processed_filtered_data/processed_test3.csv')
-df_test_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+df_test_file = ('~/taxi_fare_prediction/all/'
                  'processed_filtered_data/processed_test1_geoid.csv')
 
 df_test = pd.read_csv(df_test_file)
@@ -119,7 +109,7 @@ submission = pd.DataFrame(
         columns = ['key', 'fare_amount']
         )
 
-submission.to_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/submission/'
+submission.to_csv('~/taxi_fare_prediction/all/submission/'
                   'test_submission/submission_train1_geo.csv', 
                   index = False
                   )             
