@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Sep  8 17:30:06 2018
-
-@author: Yuanpei Cao
-"""
 
 import pandas as pd
 from sklearn.neighbors import KNeighborsRegressor
@@ -21,11 +16,11 @@ from sklearn.externals import joblib
 # Adapted from https://www.kaggle.com/maheshdadhich/
 # strength-of-visualization-python-visuals-tutorial
 
-train_fr_1 = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/'
+train_fr_1 = pd.read_csv('~/taxi_fare_prediction/'
                          'new-york-city-taxi-with-osrm/'
                          'fastest_routes_train_part_1.csv')
 
-train_fr_2 = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/'
+train_fr_2 = pd.read_csv('~/taxi_fare_prediction/'
                          'new-york-city-taxi-with-osrm/'
                          'fastest_routes_train_part_2.csv')
 
@@ -147,13 +142,13 @@ neigh_step.fit(X, Y_step)
 # save model
 ###############################################################################
 # Save to file in the current working directory    
-pkl_dist_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+pkl_dist_filename = ('~/taxi_fare_prediction/'
                      'simple_model/nn_osrm_dist.pkl')
 
-pkl_time_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+pkl_time_filename = ('~/taxi_fare_prediction/'
                      'simple_model/nn_osrm_time.pkl')
 
-pkl_step_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+pkl_step_filename = ('~/taxi_fare_prediction/'
                      'simple_model/nn_osrm_step.pkl')
 
 joblib.dump(neigh_dist, pkl_dist_filename)
