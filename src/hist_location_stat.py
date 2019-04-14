@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Sep  7 13:26:11 2018
-
-@author: Yuanpei Cao
-"""
 
 import pandas as pd
 import numpy as np
@@ -13,73 +8,17 @@ import numpy as np
 ## set up parameter
 ###############################################################################
 ## Case 1: only train based on 2,3,4,5 subset
-trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+trainset1 = ('~/taxi_fare_prediction/all/'
              'filtered_data/filter_train2.csv')
-trainset2 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+trainset2 = ('~/taxi_fare_prediction/all/'
              'filtered_data/filter_train3.csv')
-trainset3 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+trainset3 = ('~/taxi_fare_prediction/all/'
              'filtered_data/filter_train4.csv')
-trainset4 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+trainset4 = ('~/taxi_fare_prediction/all/'
              'filtered_data/filter_train5.csv')
 
-df_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+df_filename = ('~/taxi_fare_prediction/'
              'stat_feature/y_wd_loc_1.csv')
-
-###############################################################################
-## Case 2: only train based on 1,3,4,5 subset
-#trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train1.csv')
-#trainset2 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train3.csv')
-#trainset3 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train4.csv')
-#trainset4 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train5.csv')
-#
-#df_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'stat_feature/y_wd_loc_2.csv')
-
-###############################################################################
-### Case 3: only train based on 1,2,4,5 subset
-#trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train1.csv')
-#trainset2 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train2.csv')
-#trainset3 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train4.csv')
-#trainset4 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train5.csv')
-#
-#df_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'stat_feature/y_wd_loc_3.csv')
-
-###############################################################################
-## Case 4: only train based on 1,2,4,5 subset
-#trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train1.csv')
-#trainset2 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train2.csv')
-#trainset3 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train3.csv')
-#trainset4 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train5.csv')
-#
-#df_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'stat_feature/y_wd_loc_4.csv')
-
-###############################################################################
-## Case 5: only train based on 1,2,4,4 subset
-#trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train1.csv')
-#trainset2 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train2.csv')
-#trainset3 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train3.csv')
-#trainset4 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train4.csv')
-#
-#df_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'stat_feature/y_wd_loc_5.csv')
 
 ###############################################################################
 ## load dataset
