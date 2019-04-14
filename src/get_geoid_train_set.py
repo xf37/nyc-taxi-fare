@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Sep 23 14:02:56 2018
-
-@author: Yuanpei Cao
-"""
 
 import pandas as pd
 pd.set_option('display.expand_frame_repr', False)
@@ -13,36 +8,20 @@ from simpledbf import Dbf5
 ###############################################################################
 ## load training dataset
 ###############################################################################
-## case 1: training 1
-## directory 
-##train_block_file = ('/Users/ycao/Dropbox/Yuan_Xin/kaggle-taxi-fare/'
-##                    'train_set/filter_train1_for_block.csv')
-#
-#train_original_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                       'filtered_data/filter_train1.csv')
-#
-#train_d_file = ('/Users/ycao/Dropbox/Yuan_Xin/kaggle-taxi-fare/'
-#                'block_id/train11_dropoff.dbf')
-#
-#train_p_file = ('/Users/ycao/Dropbox/Yuan_Xin/kaggle-taxi-fare/'
-#                'block_id/train1_pick.dbf')
-#
-#save_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train1_geoid.csv')
 
 # case 2: training 2
 # directory
 
-train_original_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+train_original_file = ('~/taxi_fare_prediction/all/'
                        'filtered_data/filter_train2.csv')
 
-train_d_file = ('/Users/ycao/Dropbox/Yuan_Xin/kaggle-taxi-fare/'
+train_d_file = ('~/Dropbox/Yuan_Xin/kaggle-taxi-fare/'
                 'block_id/train22_dropoff.dbf')
 
-train_p_file = ('/Users/ycao/Dropbox/Yuan_Xin/kaggle-taxi-fare/'
+train_p_file = ('~/Dropbox/Yuan_Xin/kaggle-taxi-fare/'
                 'block_id/train2_pick.dbf')
 
-save_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+save_file = ('~/taxi_fare_prediction/all/'
              'filtered_data/filter_train2_geoid.csv')
 
 ###############################################################################
