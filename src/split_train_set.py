@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Sep  8 23:54:36 2018
-
-@author: Yuanpei Cao
-"""
 
 import pandas as pd
 pd.set_option('display.expand_frame_repr', False)
@@ -13,7 +8,7 @@ from sklearn.utils import shuffle
 ###############################################################################
 ## load training set
 ###############################################################################
-data = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+data = pd.read_csv('~/taxi_fare_prediction/all/'
                    'filtered_data/filter_train.csv')
 
 ###############################################################################
@@ -34,37 +29,13 @@ df_train2 = data.iloc[10000000: 20000000]
 ## save tables
 ###############################################################################
 df_train1.to_csv(
-        '/Users/ycao/Desktop/taxi_fare_prediction/all/'
+        '~/taxi_fare_prediction/all/'
         'filtered_data/filter_train1.csv',
         index = True
         )
 
 df_train2.to_csv(
-        '/Users/ycao/Desktop/taxi_fare_prediction/all/'
+        '~/taxi_fare_prediction/all/'
         'filtered_data/filter_train2.csv',
         index = True
         )
-
-#df_train3.to_csv(
-#        '/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#        'filtered_data/filter_train3.csv',
-#        index = False
-#        )
-#
-#df_train4.to_csv(
-#        '/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#        'filtered_data/filter_train4.csv',
-#        index = False
-#        )
-#
-#df_train5.to_csv(
-#        '/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#        'filtered_data/filter_train5.csv',
-#        index = False
-#        )
-
-#df_holdout.to_csv(
-#        '/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#        'filtered_data/filter_train_holdout.csv',
-#        index = False
-#        )
