@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Sep  9 00:21:18 2018
-
-@author: Yuanpei Cao
-"""
 
 import pandas as pd
 import numpy as np
 import sys
-sys.path.append('/Users/ycao/Desktop/taxi_fare_prediction/src')
+sys.path.append('~/taxi_fare_prediction/src')
 from basic_function import prepare_time_features, distance, airport_feats
 from basic_function import calculate_fare, nn_reg_on_location
 from basic_function import predict_osrm_feature, catboost_on_time
@@ -19,139 +14,32 @@ from basic_function import year_weekday_location_fare_stat
 ###############################################################################
 ## load dataset
 ###############################################################################
-### Case 1: from the way used in training set 1
-#df_test = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                       'test.csv')
-#
-## file for saving statistic features
-#stat_file = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'stat_feature/y_wd_loc_1.csv')
-#
-## file for saving processed dataset
-#df_test_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                 'processed_filtered_data/processed_test1.csv')
-#
-#df_test_without_key_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                            'processed_filtered_data/'
-#                            'processed_test1_without_key.csv')
-
-## simple models
-#pkl_nn_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                        'simple_model/train1/nn_pure_loc_1.pkl')
-#
-#pkl_catboost_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                              'simple_model/train1/catboost_pure_time_1.pkl')
-#
-#pkl_catboost_time_loc = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                              'simple_model/train1/catboost_loc_time_1.pkl')
-
-################################################################################
-### Case 2: from the way used in training set 2
-#df_test = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                       'test.csv')
-#
-## file for saving statistic features
-#stat_file = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'stat_feature/y_wd_loc_2.csv')
-#
-## file for saving processed dataset
-#df_test_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                 'processed_filtered_data/processed_test2.csv')
-#
-#df_test_without_key_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                            'processed_filtered_data/'
-#                            'processed_test2_without_key.csv')
-#
-## simple models
-#pkl_nn_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                        'simple_model/train2/nn_pure_loc_2.pkl')
-#
-#pkl_catboost_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                              'simple_model/train2/catboost_pure_time_2.pkl')
-#
-#pkl_catboost_time_loc = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                              'simple_model/train2/catboost_loc_time_2.pkl')
-
 ###############################################################################
 ## Case 3: from the way used in training set 3
-df_test = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+df_test = pd.read_csv('~/taxi_fare_prediction/all/'
                        'test.csv')
 
 # file for saving statistic features
-stat_file = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+stat_file = ('~/taxi_fare_prediction/'
              'stat_feature/y_wd_loc_3.csv')
 
 # file for saving processed dataset
-df_test_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+df_test_file = ('~/taxi_fare_prediction/all/'
                  'processed_filtered_data/processed_test3.csv')
 
-df_test_without_key_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+df_test_without_key_file = ('~/taxi_fare_prediction/all/'
                             'processed_filtered_data/'
                             'processed_test3_without_key.csv')
 
 # simple models
-pkl_nn_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+pkl_nn_pure_location = ('~/taxi_fare_prediction/'
                         'simple_model/train3/nn_pure_loc_3.pkl')
 
-pkl_catboost_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+pkl_catboost_pure_location = ('~/taxi_fare_prediction/'
                               'simple_model/train3/catboost_pure_time_3.pkl')
 
-pkl_catboost_time_loc = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+pkl_catboost_time_loc = ('~/taxi_fare_prediction/'
                               'simple_model/train3/catboost_loc_time_3.pkl')
-
-###############################################################################
-### Case 4: from the way used in training set 4
-#df_test = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                       'test.csv')
-#
-## file for saving statistic features
-#stat_file = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'stat_feature/y_wd_loc_4.csv')
-#
-## file for saving processed dataset
-#df_test_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                 'processed_filtered_data/processed_test4.csv')
-#
-#df_test_without_key_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                            'processed_filtered_data/'
-#                            'processed_test4_without_key.csv')
-#
-## simple models
-#pkl_nn_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                        'simple_model/train4/nn_pure_loc_4.pkl')
-#
-#pkl_catboost_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                              'simple_model/train4/catboost_pure_time_4.pkl')
-#
-#pkl_catboost_time_loc = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                              'simple_model/train4/catboost_loc_time_4.pkl')
-
-###############################################################################
-## Case 5: from the way used in training set 5
-#df_test = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                       'test.csv')
-#
-## file for saving statistic features
-#stat_file = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'stat_feature/y_wd_loc_5.csv')
-#
-## file for saving processed dataset
-#df_test_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                 'processed_filtered_data/processed_test5.csv')
-#
-#df_test_without_key_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                            'processed_filtered_data/'
-#                            'processed_test5_without_key.csv')
-#
-## simple models
-#pkl_nn_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                        'simple_model/train5/nn_pure_loc_5.pkl')
-#
-#pkl_catboost_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                              'simple_model/train5/catboost_pure_time_5.pkl')
-#
-#pkl_catboost_time_loc = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                              'simple_model/train5/catboost_loc_time_5.pkl')
 
 ###############################################################################
 ## feature engineering
