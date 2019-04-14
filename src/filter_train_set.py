@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Sep  8 21:15:20 2018
-
-@author: Yuanpei Cao
-"""
 
 import pandas as pd
 import numpy as np
@@ -12,7 +7,7 @@ import numpy as np
 ###############################################################################
 ## load training set
 ###############################################################################
-data = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/train.csv')
+data = pd.read_csv('~/taxi_fare_prediction/all/train.csv')
 
 ###############################################################################
 ## filter outlier
@@ -50,7 +45,7 @@ data = data.drop(['key'], axis = 1)
 
 # save filtered training set
 data.to_csv(
-        '/Users/ycao/Desktop/taxi_fare_prediction/all/'
+        '~/taxi_fare_prediction/all/'
         'filtered_data/filter_train.csv',
         index = False
         )
