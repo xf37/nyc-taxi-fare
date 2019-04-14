@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Sep  9 16:06:34 2018
-
-@author: Yuanpei Cao
-"""
 
 import pandas as pd
 import numpy as np
@@ -15,79 +10,25 @@ from sklearn.model_selection import train_test_split
 #from sklearn.metrics import mean_squared_error
 from sklearn.externals import joblib
 import sys
-sys.path.append('/Users/ycao/Desktop/taxi_fare_prediction/src')
+sys.path.append('~/taxi_fare_prediction/src')
 
 ###############################################################################
 ## set up parameter
 ###############################################################################
-### Case 1: only train based on 2,3,4,5 subset
-#trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train2.csv')
-#trainset2 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train3.csv')
-#trainset3 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train4.csv')
-#trainset4 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train5.csv')
-#
-#pkl_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'simple_model/train1/catboost_loc_time_1.pkl')
 
 ###############################################################################
 ## Case 2: only train based on 1,3,4,5 subset
-trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+trainset1 = ('~/taxi_fare_prediction/all/'
              'filtered_data/filter_train1.csv')
-trainset2 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+trainset2 = ('~/taxi_fare_prediction/all/'
              'filtered_data/filter_train3.csv')
-trainset3 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+trainset3 = ('~/taxi_fare_prediction/all/'
              'filtered_data/filter_train4.csv')
-trainset4 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+trainset4 = ('~/taxi_fare_prediction/all/'
              'filtered_data/filter_train5.csv')
 
-pkl_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+pkl_filename = ('~/taxi_fare_prediction/'
              'simple_model/train2/catboost_loc_time_2.pkl')
-
-################################################################################
-### Case 3: only train based on 1,2,4,5 subset
-#trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train1.csv')
-#trainset2 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train2.csv')
-#trainset3 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train4.csv')
-#trainset4 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train5.csv')
-#
-#pkl_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'simple_model/train3/catboost_loc_time_3.pkl')
-
-###############################################################################
-## Case 4: only train based on 1,2,3,5 subset
-#trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train1.csv')
-#trainset2 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train2.csv')
-#trainset3 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train3.csv')
-#trainset4 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train5.csv')
-#
-#pkl_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'simple_model/train4/catboost_loc_time_4.pkl')
-
-###############################################################################
-## Case 5: only train based on 1,2,3,4 subset
-#trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train1.csv')
-#trainset2 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train2.csv')
-#trainset3 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train3.csv')
-#trainset4 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train4.csv')
-#
-#pkl_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'simple_model/train5/catboost_loc_time_5.pkl')
 
 ###############################################################################
 ## load dataset
