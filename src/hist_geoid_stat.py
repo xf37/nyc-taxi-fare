@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Sep 24 23:05:38 2018
-
-@author: Yuanpei Cao
-"""
 
 import pandas as pd
 pd.set_option('display.expand_frame_repr', False)
@@ -13,31 +8,18 @@ import numpy as np
 ###############################################################################
 ## set up parameter
 ###############################################################################
-### Case 1: train based on 1
-#trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#             'filtered_data/filter_train1_geoid.csv')
-#
-#df_filename_2 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                 'stat_feature/y_h_geo_first2_1.csv')
-#df_filename_5 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                 'stat_feature/y_h_geo_first5_1.csv')
-#df_filename_11 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                  'stat_feature/y_h_geo_first11_1.csv')
-#df_filename_all = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                   'stat_feature/y_h_geo_all_1_basedon_2.csv')
-
 ###############################################################################
 ## Case 2: train based on 2
-trainset1 = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+trainset1 = ('~/taxi_fare_prediction/all/'
              'filtered_data/filter_train2_geoid.csv')
 
-df_filename_2 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+df_filename_2 = ('~/taxi_fare_prediction/'
                  'stat_feature/y_h_geo_first2_2.csv')
-df_filename_5 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+df_filename_5 = ('~/taxi_fare_prediction/'
                  'stat_feature/y_h_geo_first5_2.csv')
-df_filename_11 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+df_filename_11 = ('~/taxi_fare_prediction/'
                   'stat_feature/y_h_geo_first11_2.csv')
-df_filename_all = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+df_filename_all = ('~/taxi_fare_prediction/'
                    'stat_feature/y_h_geo_all_2_basedon_1.csv')
 
 ###############################################################################
