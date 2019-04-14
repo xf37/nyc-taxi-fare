@@ -1,20 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Sep 23 22:19:49 2018
-
-@author: Yuanpei Cao
-"""
-
 import pandas as pd
 
 ###############################################################################
 ## load geoIDs
 ###############################################################################
-df_train1_geoid = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+df_train1_geoid = pd.read_csv('~/taxi_fare_prediction/all/'
                               'filtered_data/filter_train1_geoid.csv')
 
-df_train2_geoid = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+df_train2_geoid = pd.read_csv('~/taxi_fare_prediction/all/'
                               'filtered_data/filter_train2_geoid.csv')
 
 ###############################################################################
@@ -102,5 +96,5 @@ df_loc_geoid = pd.concat(
 ###############################################################################
 ## save the result
 ###############################################################################
-df_loc_geoid.to_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+df_loc_geoid.to_csv('~/taxi_fare_prediction/all/'
                     'loc_geoid_train12.csv', index = False)
