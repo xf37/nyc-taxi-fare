@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Sep  9 00:21:18 2018
-
-@author: Yuanpei Cao
-"""
 
 import pandas as pd
 import numpy as np
 import sys
-sys.path.append('/Users/ycao/Desktop/taxi_fare_prediction/src')
+sys.path.append('~/taxi_fare_prediction/src')
 from basic_function import prepare_time_features, distance, airport_feats
 from basic_function import calculate_fare, nn_reg_on_location
 from basic_function import predict_osrm_feature, catboost_on_time
@@ -20,75 +15,40 @@ from basic_function import year_hour_geo_fare_stat
 ###############################################################################
 ## load dataset
 ###############################################################################
-### Case 1: from the way used in training set 1
-#df_test = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                       'test_w_geoid.csv')
-#
-## file for saving statistic features
-#stat_file = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#             'stat_feature/y_wd_loc_1.csv')
-#
-## file for saving processed dataset
-#df_test_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                 'processed_filtered_data/processed_test1_geoid.csv')
-#
-#df_test_without_key_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
-#                            'processed_filtered_data/'
-#                            'processed_test1_without_key_geoid.csv')
-#
-## simple models
-#pkl_nn_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                        'simple_model/train1/nn_pure_loc_1.pkl')
-#
-#pkl_catboost_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                              'simple_model/train1/catboost_pure_time_1.pkl')
-#
-#pkl_catboost_time_loc = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                              'simple_model/train1/catboost_loc_time_1.pkl')
-#
-#geo_stat_file_2 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                   'stat_feature/y_h_geo_first2_2.csv')
-#geo_stat_file_5 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                   'stat_feature/y_h_geo_first5_2.csv')
-#geo_stat_file_11 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                    'stat_feature/y_h_geo_first11_2.csv')
-#geo_stat_file_all = ('/Users/ycao/Desktop/taxi_fare_prediction/'
-#                     'stat_feature/y_h_geo_all_2_basedon_1.csv')
-
 ###############################################################################
 ## Case 2: from the way used in training set 2
-df_test = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+df_test = pd.read_csv('~/taxi_fare_prediction/all/'
                        'test_w_geoid.csv')
 
 # file for saving statistic features
-stat_file = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+stat_file = ('~/taxi_fare_prediction/'
              'stat_feature/y_wd_loc_2.csv')
 
 # file for saving processed dataset
-df_test_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+df_test_file = ('~/taxi_fare_prediction/all/'
                  'processed_filtered_data/processed_test2_geoid.csv')
 
-df_test_without_key_file = ('/Users/ycao/Desktop/taxi_fare_prediction/all/'
+df_test_without_key_file = ('~/taxi_fare_prediction/all/'
                             'processed_filtered_data/'
                             'processed_test2_without_key_geoid.csv')
 
 # simple models
-pkl_nn_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+pkl_nn_pure_location = ('~/taxi_fare_prediction/'
                         'simple_model/train2/nn_pure_loc_2.pkl')
 
-pkl_catboost_pure_location = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+pkl_catboost_pure_location = ('~/taxi_fare_prediction/'
                               'simple_model/train2/catboost_pure_time_2.pkl')
 
-pkl_catboost_time_loc = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+pkl_catboost_time_loc = ('~/taxi_fare_prediction/'
                               'simple_model/train2/catboost_loc_time_2.pkl')
 
-geo_stat_file_2 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+geo_stat_file_2 = ('~/taxi_fare_prediction/'
                    'stat_feature/y_h_geo_first2_1.csv')
-geo_stat_file_5 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+geo_stat_file_5 = ('~/taxi_fare_prediction/'
                    'stat_feature/y_h_geo_first5_1.csv')
-geo_stat_file_11 = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+geo_stat_file_11 = ('~/taxi_fare_prediction/'
                     'stat_feature/y_h_geo_first11_1.csv')
-geo_stat_file_all = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+geo_stat_file_all = ('~/taxi_fare_prediction/'
                      'stat_feature/y_h_geo_all_1_basedon_2.csv')
 
 ###############################################################################
