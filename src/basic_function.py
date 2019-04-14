@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Sep  6 21:52:28 2018
-
-@author: Yuanpei Cao
-"""
 
 import pandas as pd
 pd.set_option('display.expand_frame_repr', False)
@@ -222,17 +217,17 @@ def predict_osrm_feature(df):
     
     ## get nn model
     # dist
-    pkl_dist_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+    pkl_dist_filename = ('~/taxi_fare_prediction/'
                          'simple_model/nn_osrm_dist.pkl')
     neigh_dist = joblib.load(pkl_dist_filename) 
     
     # time
-    pkl_time_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+    pkl_time_filename = ('~/taxi_fare_prediction/'
                          'simple_model/nn_osrm_time.pkl')
     neigh_time = joblib.load(pkl_time_filename) 
     
     # step
-    pkl_step_filename = ('/Users/ycao/Desktop/taxi_fare_prediction/'
+    pkl_step_filename = ('~/taxi_fare_prediction/'
                          'simple_model/nn_osrm_step.pkl')
     neigh_step = joblib.load(pkl_step_filename) 
     
@@ -575,7 +570,7 @@ def year_weekday_location_fare_stat(df, stat_file):
 # add fare distribution based on longitude and latitdue
 def long_lat_stat(df):
     # load prepared features
-    long_lat_stat = pd.read_csv('/Users/ycao/Desktop/taxi_fare_prediction/'
+    long_lat_stat = pd.read_csv('~/taxi_fare_prediction/'
                                 'new_feature/long_lat_stat.csv')
     
     # get the first 1 decimal of longtitude and latitude
@@ -770,37 +765,37 @@ def year_long_lat_stat(df):
 def year_month_day_hour_stat(df):
     # load prepared features
     year_month_day_hour_stat_2009 = pd.read_csv(
-            '/Users/ycao/Desktop/taxi_fare_prediction/'
+            '~/taxi_fare_prediction/'
             'new_feature/year_month_day_hour_2009.csv'
             )
     
     year_month_day_hour_stat_2010 = pd.read_csv(
-            '/Users/ycao/Desktop/taxi_fare_prediction/'
+            '~/taxi_fare_prediction/'
             'new_feature/year_month_day_hour_2010.csv'
             )
 
     year_month_day_hour_stat_2011 = pd.read_csv(
-            '/Users/ycao/Desktop/taxi_fare_prediction/'
+            '~/taxi_fare_prediction/'
             'new_feature/year_month_day_hour_2011.csv'
             )
 
     year_month_day_hour_stat_2012 = pd.read_csv(
-            '/Users/ycao/Desktop/taxi_fare_prediction/'
+            '~/taxi_fare_prediction/'
             'new_feature/year_month_day_hour_2012.csv'
             ) 
 
     year_month_day_hour_stat_2013 = pd.read_csv(
-            '/Users/ycao/Desktop/taxi_fare_prediction/'
+            '~/taxi_fare_prediction/'
             'new_feature/year_month_day_hour_2013.csv'
             )    
 
     year_month_day_hour_stat_2014 = pd.read_csv(
-            '/Users/ycao/Desktop/taxi_fare_prediction/'
+            '~/taxi_fare_prediction/'
             'new_feature/year_month_day_hour_2014.csv'
             )    
     
     year_month_day_hour_stat_2015 = pd.read_csv(
-            '/Users/ycao/Desktop/taxi_fare_prediction/'
+            '~/taxi_fare_prediction/'
             'new_feature/year_month_day_hour_2015.csv'
             )    
     
@@ -845,7 +840,7 @@ def year_month_day_hour_stat(df):
 def year_month_day_stat(df):
     # load prepared features
     year_month_day_stat = pd.read_csv(
-            '/Users/ycao/Desktop/taxi_fare_prediction/'
+            '~/taxi_fare_prediction/'
             'new_feature/year_month_day_stat.csv'
             )   
 
@@ -878,7 +873,7 @@ def year_month_day_stat(df):
 def year_month_hour_stat(df):
     # load prepared features
     year_month_hour_stat = pd.read_csv(
-            '/Users/ycao/Desktop/taxi_fare_prediction/'
+            '~/taxi_fare_prediction/'
             'new_feature/year_month_hour_stat.csv'
             )   
 
@@ -911,7 +906,7 @@ def year_month_hour_stat(df):
 def year_month_weekday_stat(df):
     # load prepared features
     year_month_weekday_stat = pd.read_csv(
-            '/Users/ycao/Desktop/taxi_fare_prediction/'
+            '~/taxi_fare_prediction/'
             'new_feature/year_month_weekday_stat.csv'
             )   
 
@@ -953,7 +948,7 @@ def year_month_weekday_stat(df):
 def year_week_stat(df):
     # load prepared features
     year_week_stat = pd.read_csv(
-            '/Users/ycao/Desktop/taxi_fare_prediction/'
+            '~/taxi_fare_prediction/'
             'new_feature/year_week_stat.csv'
             )   
     
@@ -986,7 +981,7 @@ def year_week_stat(df):
 # simple regression based on distance
 def reg_on_distance(df):
     ## Load from file
-    pkl_filename = ("/Users/ycao/Desktop/taxi_fare_prediction/"
+    pkl_filename = ("~/taxi_fare_prediction/"
                     "simple_regression.pkl")
     
     with open(pkl_filename, 'rb') as file:  
